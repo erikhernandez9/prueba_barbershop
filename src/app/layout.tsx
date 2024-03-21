@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { montserrat } from "./ui/fonts";
 import "./globals.css";
 import Image from "next/image";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,10 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <nav style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60px', backgroundColor: '#333' }}>
-          <Image src="/barbershop.png" alt="barber" width={150} height={50} /></nav>
+      <body className={montserrat.className}>
+        <nav className="flex justify-center items-center h-16 bg-black">
+          <Image src="/barbershop.png" alt="barber" width={150} height={50} />
+        </nav>
         {children}
+        <footer></footer>
       </body>
     </html>
   );
