@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { montserrat } from "./ui/fonts";
+import { montserrat, playfairDisplay } from "./ui/fonts";
 import "./globals.css";
 import Image from "next/image";
 
@@ -15,9 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
-        <nav className="flex justify-center items-center h-16 bg-black">
-          <Image src="/barbershop.png" alt="barber" width={150} height={50} />
+      <body className={playfairDisplay.className}>
+        <nav className="fixed w-full top-0 left-0 justify-center items-center flex z-50 h-20 bg-transparent">
+          <div className="flex w-full max-w-screen-lg justify-center px-4">
+            <Image src="/barbershop.png" alt="barber" width={200} height={50} />
+          </div>        
         </nav>
         {children}
         <footer></footer>
